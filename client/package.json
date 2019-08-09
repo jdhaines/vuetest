@@ -34,7 +34,8 @@
       "@vue/airbnb"
     ],
     "rules": {
-      "indent": "off"
+      "indent": "off",
+      "max-len": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"
