@@ -58,6 +58,7 @@ def all_books():
         response_object['books'] = BOOKS
     return jsonify(response_object)
 
+
 @app.route('/books/<book_id>', methods=['PUT'])
 def single_book(book_id):
     response_object = {'status': 'success'}
@@ -76,13 +77,12 @@ def single_book(book_id):
 
 
 def remove_book(book_id):
-    print('here')
     for book in BOOKS:
         if book['id'] == book_id:
             BOOKS.remove(book)
             print('Book id2= {}'.format(book_id))
             return True
-        return False
+    return False
 
 # caller
 if __name__ == '__main__':
