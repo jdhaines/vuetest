@@ -64,6 +64,7 @@ def single_book(book_id):
     if request.method == 'PUT':
         post_data = request.get_json()
         remove_book(book_id)
+        print('Book id1= {}'.format(book_id))
         BOOKS.append({
             'id': uuid.uuid4().hex,
             'title': post_data.get('title'),
@@ -75,9 +76,11 @@ def single_book(book_id):
 
 
 def remove_book(book_id):
+    print('here')
     for book in BOOKS:
         if book['id'] == book_id:
-            Books.remove(book)
+            BOOKS.remove(book)
+            print('Book id2= {}'.format(book_id))
             return True
         return False
 
