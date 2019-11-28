@@ -1,4 +1,4 @@
-FROM python3.7-slim
+FROM python:3.7-slim
 LABEL maintainer "Josh Haines <Josh@JoshHaines.com"
 RUN apt-get update \
     && apt-get upgrade -y \

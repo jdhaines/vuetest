@@ -118,7 +118,7 @@
                 this.getBooks(); // why?
             },
             updateBook(payload, bookID) {
-                const path = `http://localhost:5000/books/${bookID}`;
+                const path = `http://localhost:8001/books/${bookID}`;
                 axios.put(path, payload)
                     .then(() => {
                         this.getBooks();
@@ -147,7 +147,7 @@
                 this.editForm = book;
             },
             getBooks() {
-                const path = 'http://localhost:5000/books';
+                const path = 'http://localhost:8001/books';
                 axios.get(path)
                     .then((res) => {
                         this.books = res.data.books;
@@ -158,7 +158,7 @@
                     });
             },
             addBook(payload) {
-                const path = 'http://localhost:5000/books';
+                const path = 'http://localhost:8001/books';
                 axios.post(path, payload)
                     .then(() => {
                         this.getBooks();

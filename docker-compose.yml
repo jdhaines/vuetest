@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+    server:
+        build: ./server
+        restart: always
+        ports:
+            - "8001:8001"
+        command: gunicorn -b :8001 --access-logfile - --error-logfile - wsgi --workers 2
+    
+    client:
+        build: ./client
+        depends_on:
+            - server
+        restart: always
+        # volumes:
+            # - '.:/app'
+            # - '/app/node_modules'
+        ports:
+            - "8002:8080"
