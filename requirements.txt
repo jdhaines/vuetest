@@ -1,0 +1,11 @@
+-i https://pypi.org/simple
+click
+flask-cors
+flask
+itsdangerous
+jinja2
+markupsafe
+pur
+six
+werkzeug
+black
